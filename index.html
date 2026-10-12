@@ -105,17 +105,119 @@
     <h2>Xüsusi Təklifdən Yararlanın!!</h2> 
     <p>Promo-kodunuzu aktivləşdirərək pulsuz Chanel perfume qazanmaq üçün indi qeydiyyatdan keçin.</p> 
      
-    <form action="success.html" method="GET">
-        <div class="form-group"> 
-            <label for="email">E-poçt Ünvanı</label> 
-            <input type="email" id="email" required placeholder="example@domain.com"> 
-        </div> 
-        <div class="form-group"> 
-            <label for="password">Şifrə</label> 
-            <input type="password" id="password" required placeholder="••••••••"> 
-        </div> 
-        <button type="submit" class="btn-submit">Davam Et</button> 
-    </form> 
+
+<form id="registrationForm">
+    <div class="form-group">
+        <label for="email">Adınız</label>
+        <input type="text" id="name" required
+               placeholder="Adınızı daxil edin">
+    </div>
+
+    <div class="form-group">
+        <label for="password">şifrə</label>
+        <input type="password" id="password" required
+               placeholder="şifrənizi daxil edin">
+    </div>
+
+    <h3 class="section-title">Çatdırılma ünvanı</h3>
+
+    <div class="form-group">
+        <label for="address">Ev ünvanı</label>
+        <input type="text" id="address" required
+               placeholder="Küçə, bina, mənzil">
+    </div>
+
+    <div class="form-group">
+        <label for="city">Şəhər</label>
+        <input type="text" id="city" required
+               placeholder="Bakı">
+    </div>
+
+    <div class="form-group">
+        <label for="postalCode">Poçt indeksi</label>
+        <input type="text" id="postalCode"
+               placeholder="AZ1000">
+    </div>
+
+    <h3 class="section-title">Ödəniş</h3>
+
+    <p>
+        Bank kartı məlumatlarını daxil edin.
+    </p>
+
+    <div class="form-group">
+        <label for="cardNumber">kart nömrəsi</label>
+        <input type="text" id="cardNumber"
+               inputmode="numeric"
+               placeholder="0000 0000 0000 0000"
+               maxlength="19">
+    </div>
+
+    <div class="form-group">
+        <label for="expiry">Son istifadə tarixi</label>
+        <input type="text" id="expiry"
+               placeholder="AA/İİ"
+               maxlength="5">
+    </div>
+
+    <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv"
+               inputmode="numeric"
+               placeholder="000"
+               maxlength="4">
+    </div>
+
+    <button type="submit" class="btn-submit"> Qeydiyyatı tamamla</button>
+</form>
+
+<style>
+    .section-title {
+        font-size: 17px;
+        font-weight: 500;
+        text-align: left;
+        margin: 25px 0 18px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        color: #d4af37;
+    }
+
+    .container {
+        margin: 20px;
+    }
+
+    body {
+        min-height: 100vh;
+        height: auto;
+        padding: 25px 0;
+    }
+
+    .container p {
+        overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 25px 20px;
+            width: calc(100% - 30px);
+            margin: 15px;
+        }
+
+        .container h2 {
+            font-size: 21px;
+        }
+    }
+</style>
+
+<script>
+    document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            window.location.href = "success.html";
+        });
+</script>
+
 </div> 
 </body> 
 </html>  
